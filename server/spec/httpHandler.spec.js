@@ -21,7 +21,7 @@ describe('server responses', () => {
     done();
   });
 
-  xit('should respond to a GET request for a swim command', (done) => {
+  it('should respond to a GET request for a swim command', (done) => {
     let { req, res } = server.mock('/', 'GET');
 
 
@@ -33,9 +33,9 @@ describe('server responses', () => {
     done();
   });
 
-  xit('should respond with 404 to a GET request for a missing background image', (done) => {
+  it('should respond with 404 to a GET request for a missing background image', (done) => {
     httpHandler.backgroundImageFile = path.join('.', 'spec', 'missing.jpg');
-    let { req, res } = server.mock('FILL_ME_IN', 'FILL_ME_IN');
+    let { req, res } = server.mock(httpHandler.backgroundImageFile, 'GET');
 
     httpHandler.router(req, res, () => {
       expect(res._responseCode).to.equal(404);

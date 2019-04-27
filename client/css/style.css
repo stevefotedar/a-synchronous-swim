@@ -12,7 +12,7 @@ h3 {
   width: 622px;
 }
 .background {
-  background-image: url(http://127.0.0.1:3000/background.jpg);
+  background-image: url("http://127.0.0.1:3000/background.jpg");
 }
 .team {
   position: absolute;
@@ -26,6 +26,9 @@ h3 {
   padding-top: 0;
   text-align: center;
   display: inline-block;
+  background-image: url("http://www.stickpng.com/assets/thumbs/58f37995a4fa116215a92421.png");
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
 }
 .turn-left {
   transform: rotate(0deg);

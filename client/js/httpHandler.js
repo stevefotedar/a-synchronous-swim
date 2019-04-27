@@ -5,7 +5,6 @@
   const ajaxSwimCommand = () => {
     $.get(serverUrl, (data) => {
       if (data) {
-        console.log(data);
         SwimTeam.move(data);
         ajaxSwimCommand();
       }
@@ -22,13 +21,13 @@
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
-  const ajaxFileUplaod = (file) => {
+  const ajaxFileUpload = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: serverUrl,
+      url: 'http://127.0.0.1:3000/background.jpg',
       cache: false,
       contentType: false,
       processData: false,
@@ -54,7 +53,7 @@
       return;
     }
 
-    ajaxFileUplaod(file);
+    ajaxFileUpload(file);
   });
 
 })();
